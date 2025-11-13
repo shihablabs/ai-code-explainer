@@ -3,7 +3,8 @@ import { ThemeProvider } from "./providers/theme-provider";
 
 export const metadata = {
   title: "AI Code Explainer - Muhammad Shihab Uddin",
-  description: "Advanced AI-powered code explanation tool with dark/light mode",
+  description:
+    "Advanced AI-powered code explanation tool with friendly responses",
   authors: [{ name: "Muhammad Shihab Uddin" }],
   keywords: ["code", "explainer", "AI", "programming", "developer tools"],
 };
@@ -14,11 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider defaultTheme="system" storageKey="code-explainer-theme">
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

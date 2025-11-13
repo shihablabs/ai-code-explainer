@@ -16,6 +16,8 @@ interface AdvancedFiltersProps {
   onExplanationStyleChange: (style: string) => void;
   includeExamples: boolean;
   onIncludeExamplesChange: (include: boolean) => void;
+  language: string;
+  onLanguageChange: (language: string) => void;
 }
 
 export function AdvancedFilters({
@@ -25,12 +27,32 @@ export function AdvancedFilters({
   onExplanationStyleChange,
   includeExamples,
   onIncludeExamplesChange,
+  language,
+  onLanguageChange,
 }: AdvancedFiltersProps) {
   return (
-    <div className="space-y-4 p-4 border rounded-lg bg-background">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="programming-language">Programming Language</Label>
+    <div className="space-y-6 p-6 border rounded-lg bg-background shadow-sm">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="space-y-3">
+          <Label htmlFor="language" className="text-sm font-medium">
+            Language
+          </Label>
+          <Select value={language} onValueChange={onLanguageChange}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Select language" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="english">English</SelectItem>
+              <SelectItem value="bengali">Bengali</SelectItem>
+            </SelectContent>
+          </Select>
+          <p className="text-xs text-muted-foreground">Explanation language</p>
+        </div>
+
+        <div className="space-y-3">
+          <Label htmlFor="programming-language" className="text-sm font-medium">
+            Programming Language
+          </Label>
           <Select
             value={filters.programmingLanguage}
             onValueChange={(value) =>
@@ -38,22 +60,25 @@ export function AdvancedFilters({
             }
           >
             <SelectTrigger>
-              <SelectValue placeholder="Select language" />
+              <SelectValue placeholder="Auto Detect" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="auto">Auto-detect</SelectItem>
+              <SelectItem value="auto">Auto Detect</SelectItem>
               <SelectItem value="javascript">JavaScript</SelectItem>
               <SelectItem value="python">Python</SelectItem>
               <SelectItem value="java">Java</SelectItem>
               <SelectItem value="cpp">C++</SelectItem>
               <SelectItem value="react">React</SelectItem>
-              <SelectItem value="node">Node.js</SelectItem>
+              <SelectItem value="html">HTML/CSS</SelectItem>
+              <SelectItem value="sql">SQL</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="explanation-depth">Explanation Depth</Label>
+        <div className="space-y-3">
+          <Label htmlFor="explanation-depth" className="text-sm font-medium">
+            Explanation Depth
+          </Label>
           <Select
             value={filters.explanationDepth}
             onValueChange={(value: "basic" | "intermediate" | "advanced") =>
@@ -64,15 +89,19 @@ export function AdvancedFilters({
               <SelectValue placeholder="Select depth" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="basic">Basic</SelectItem>
-              <SelectItem value="intermediate">Intermediate</SelectItem>
-              <SelectItem value="advanced">Advanced</SelectItem>
+              <SelectItem value="basic">Basic (Simple)</SelectItem>
+              <SelectItem value="intermediate">
+                Intermediate (Detailed)
+              </SelectItem>
+              <SelectItem value="advanced">Advanced (Deep Dive)</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="target-audience">Target Audience</Label>
+        <div className="space-y-3">
+          <Label htmlFor="target-audience" className="text-sm font-medium">
+            Target Audience
+          </Label>
           <Select
             value={filters.targetAudience}
             onValueChange={(value: "student" | "developer" | "senior") =>
@@ -91,9 +120,11 @@ export function AdvancedFilters({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="explanation-style">Explanation Style</Label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t">
+        <div className="space-y-3">
+          <Label htmlFor="explanation-style" className="text-sm font-medium">
+            Explanation Style
+          </Label>
           <Select
             value={explanationStyle}
             onValueChange={onExplanationStyleChange}
@@ -109,15 +140,23 @@ export function AdvancedFilters({
           </Select>
         </div>
 
-        <div className="flex items-center space-x-2 pt-8">
+        <div className="flex items-center justify-between space-x-2 pt-6">
+          <div className="space-y-0.5">
+            <Label
+              htmlFor="include-examples"
+              className="text-sm font-medium cursor-pointer"
+            >
+              Include Examples
+            </Label>
+            <p className="text-xs text-muted-foreground">
+              Add practical examples
+            </p>
+          </div>
           <Switch
             id="include-examples"
             checked={includeExamples}
             onCheckedChange={onIncludeExamplesChange}
           />
-          <Label htmlFor="include-examples" className="cursor-pointer">
-            Include Practical Examples
-          </Label>
         </div>
       </div>
     </div>

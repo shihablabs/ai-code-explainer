@@ -3,11 +3,26 @@ export interface ExplanationRequest {
   language: "english" | "bengali";
   explanationStyle: "detailed" | "concise" | "beginner";
   includeExamples: boolean;
+  programmingLanguage: string;
+  explanationDepth: "basic" | "intermediate" | "advanced";
+  targetAudience: "student" | "developer" | "senior";
 }
 
 export interface ExplanationResponse {
   explanation: string;
   error?: string;
+}
+
+export interface DeepSeekMessage {
+  role: "system" | "user";
+  content: string;
+}
+
+export interface DeepSeekRequest {
+  model: string;
+  messages: DeepSeekMessage[];
+  max_tokens: number;
+  temperature: number;
 }
 
 export interface CodeSnippet {
@@ -21,17 +36,4 @@ export interface FilterState {
   programmingLanguage: string;
   explanationDepth: "basic" | "intermediate" | "advanced";
   targetAudience: "student" | "developer" | "senior";
-}
-
-export interface DeepSeekMessage {
-  role: "system" | "user" | "assistant";
-  content: string;
-}
-
-export interface DeepSeekRequest {
-  model: string;
-  messages: DeepSeekMessage[];
-  max_tokens?: number;
-  temperature?: number;
-  stream?: boolean;
 }
