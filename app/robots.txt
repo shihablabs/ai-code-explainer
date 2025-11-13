@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-code-explainer.vercel.app/sitemap.xml
