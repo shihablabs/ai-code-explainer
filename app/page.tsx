@@ -150,12 +150,12 @@ export default function Home() {
             <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
               <span>By</span>
               <a
-                href="https://github.com/maker-shihab"
+                href="https://shihablabs.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                Muhammad Shihab Uddin
+                Shihab Labs
               </a>
             </div>
           </div>
@@ -372,12 +372,12 @@ export default function Home() {
           <p>
             Built with ❤️ by{" "}
             <a
-              href="https://github.com/maker-shihab"
+              href="https://shihablabs.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              Muhammad Shihab Uddin
+              Shihab Labs
             </a>{" "}
             • Next.js • TypeScript • Tailwind CSS • Shadcn/ui
           </p>

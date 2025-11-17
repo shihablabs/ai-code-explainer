@@ -8,6 +8,7 @@ AI Code Explainer is a bilingual coding buddy that turns confusing code into fri
 
 ## ✨ Highlights
 
+- **Built by [Shihab Labs](https://shihablabs.vercel.app/)** – Founder & Full-Stack Developer at Shihablabs bringing agency-grade product polish.
 - **Bilingual output** – Switch between English and Bengali explanations without leaving the page.
 - **Custom teaching styles** – Choose explanation depth, style (detailed, concise, beginner), target audience, and whether to include examples.
 - **Quick start snippets** – One-click sample snippets help you test the flow instantly.
@@ -86,6 +87,19 @@ Then visit [http://localhost:3000](http://localhost:3000).
 4. Review the explanation in the **AI Explanation** panel and tweak settings if you’d like a different tone.
 
 Tip: Use the Quick Start buttons to prefill common React/Python/JavaScript snippets for demos.
+
+---
+
+## 👨‍💻 About Shihab Labs
+
+Crafted by [Shihab Labs](https://shihablabs.vercel.app/) — Founder & Full-Stack Developer at Shihablabs delivering fast, human-centered web tools.
+
+- Python · Node.js · Express.js
+- JavaScript · TypeScript
+- React · Next.js
+- Shopify · Liquid
+- HTML5 · CSS3 · Git
+- MongoDB · PostgreSQL
 
 ---
 

@@ -30,12 +30,12 @@ export default function NotFound() {
           <p>
             Built with ❤️ by{" "}
             <a
-              href="https://github.com/maker-shihab"
+              href="https://shihablabs.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              Muhammad Shihab Uddin
+              Shihab Labs
             </a>
           </p>
         </div>
